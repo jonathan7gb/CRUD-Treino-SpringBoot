@@ -14,7 +14,7 @@ public class Treino {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false, length = 100)
     private String nome;
@@ -26,5 +26,5 @@ public class Treino {
     private int series;
 
     @Column(nullable = false, length = 100)
-    private String musculoa_alvo;
+    private String musculo_alvo;
 }
