@@ -26,5 +26,5 @@ public class Treino {
     private int series;
 
     @Column(nullable = false, length = 100)
-    private String musculo_alvo;
+    private String musculo;
 }

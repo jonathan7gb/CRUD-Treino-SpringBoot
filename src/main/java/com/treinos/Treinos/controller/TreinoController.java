@@ -33,16 +33,16 @@ public class TreinoController {
         return treinoRepository.save(treino);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<Treino> update(@PathVariable Long id, @RequestBody Treino treinoDetails) {
-        Optional<Treino> treino = treinoRepository.findById(treinoDetails.getId());
+        Optional<Treino> treino = treinoRepository.findById(id);
 
         if(treino.isPresent()){
             Treino treinoUpdate = treino.get();
             treinoUpdate.setNome(treinoDetails.getNome());
             treinoUpdate.setRepeticoes(treinoDetails.getRepeticoes());
             treinoUpdate.setSeries(treinoDetails.getSeries());
-            treinoUpdate.setMusculo_alvo(treinoDetails.getMusculo_alvo());
+            treinoUpdate.setMusculo(treinoDetails.getMusculo());
 
             return ResponseEntity.ok(treinoRepository.save(treinoUpdate));
         }else {
